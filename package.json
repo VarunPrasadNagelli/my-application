@@ -1,0 +1,34 @@
+{
+  "name": "my-application",
+  "version": "1.0.0",
+  "description": "my personal web application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VarunPrasadNagelli/my-application.git"
+  },
+  "author": "varunprasad nagelli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VarunPrasadNagelli/my-application/issues"
+  },
+  "homepage": "https://github.com/VarunPrasadNagelli/my-application#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.8",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "gravatar": "^1.8.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.8.0",
+    "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "nodemon": "^2.0.20"
+  }
+}
