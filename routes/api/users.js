@@ -4,6 +4,9 @@ const { check, validationResult } = require("express-validator");
 const Users = require("../../models/Users");
 const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+require("dotenv").config();
+
 // @routes POST api/users
 // @des    register user
 // @access Public
@@ -36,8 +39,24 @@ router.post(
       });
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
-      user.save();
-      res.json("user Registered");
+      await user.save();
+      const payload = {
+        users: {
+          id: user.id,
+        },
+      };
+      jwt.sign(
+        payload,
+        process.env.jwtSecret,
+        { expiresIn: 36000 },
+        (error, token) => {
+          if (error) {
+            res.json(error.message);
+          } else {
+            res.json(token);
+          }
+        }
+      );
     } catch (error) {
       res.json(error.message);
     }
