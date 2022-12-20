@@ -1,3 +1,4 @@
 {
-  "mongoUri": "mongodb+srv://varun123:varun123@cluster0.h4zs7os.mongodb.net/?retryWrites=true&w=majority"
+  "mongoUri": "mongodb+srv://varun123:@cluster0.h4zs7os.mongodb.net/?retryWrites=true&w=majority",
+  "jwtSecret": "myapplication"
 }
